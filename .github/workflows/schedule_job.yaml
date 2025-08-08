@@ -1,0 +1,15 @@
+name: Schedule Jobs
+
+on:
+  schedule:
+    - cron: "51 10 * * *" # Every day at midnight UTC at 12 am minute (0 - 59), hour (0 - 23), day of month (1 - 31), month (1 - 12), day of week (0 - 6) (Sunday=0)
+
+jobs:
+  run-script:
+    name: Run Scheduler script
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Message
+        run: echo "My Workflow scheduler"
+    
